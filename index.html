@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#f6f7f5">
-  <title>Lyra · Three Ways to Earn</title>
+  <title>Lyra · A Moment for You</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preload" href="assets/RobotoCondensed.ttf" as="font" type="font/ttf" crossorigin>
   <script defer src="assets/lucide.min.js"></script>
-  <script type="module" src="app.mjs"></script>
+  <script type="module" src="acknowledgment.mjs?v=2"></script>
 </head>
 <body>
   <header class="site-header">
     <a class="wordmark" href="./">LYRA<span>STARLIGHT</span></a>
     <div class="header-actions"><span class="badge">CONCEPT STUDY</span>
-      <a href="evaluation.html" class="plain-link">Evaluation <i data-lucide="arrow-up-right"></i></a></div>
+      <a href="direction.html" class="plain-link">Design notes <i data-lucide="arrow-up-right"></i></a></div>
   </header>
   <main>
-    <div class="title-row"><div><p class="eyebrow">ACTIVITY REWARDS / 01</p>
-      <h1>Three ways to earn.</h1></div><span class="edition">14 story panels · 3 concepts</span></div>
+    <div class="title-row"><div><p class="eyebrow">ACTIVITY ACKNOWLEDGMENT / 02</p>
+      <h1>A moment for you.</h1></div><span class="edition">3 scenes · 3 matched pairs</span></div>
     <form class="controls" id="controls" aria-label="Preview conditions">
       <fieldset class="activity"><legend>Recorded activity</legend>
         <div class="segments">
@@ -29,21 +29,17 @@
         </div>
       </fieldset>
       <label class="amount-label">Amount<div class="amount"><input id="amount" type="number" min="3" max="99" step="1" value="5" inputmode="numeric" aria-label="Activity amount"><span id="unit">km</span></div></label>
-      <label class="pace-label">Story pace<select id="pace">
-        <option value="daily">Proposed · daily only</option>
-        <option value="current">Current · extra reward step</option>
-      </select></label>
       <div class="shared-actions">
         <button type="button" id="reset" class="icon-button" title="Reset all three watches" aria-label="Reset all three watches"><i data-lucide="rotate-ccw"></i></button>
-        <button type="button" id="next-all" class="primary">Next beat <i data-lucide="arrow-right"></i></button>
+        <button type="button" id="next-all" class="primary"><span>Acknowledge</span><i data-lucide="arrow-right"></i></button>
       </div>
     </form>
     <p id="validation" role="status" class="validation" hidden></p>
     <div id="loading" role="status">Loading artwork…</div>
-    <section class="watches" id="watches" aria-label="Three interactive reward concepts" hidden></section>
+    <section class="watches" id="watches" aria-label="Three matched acknowledgment scenes" hidden></section>
     <div class="below">
       <span><span class="status-dot"></span>Simulated activity · not connected to your watch</span>
-      <a class="plain-link" href="evaluation.html#rules">Current rules &amp; proposals <i data-lucide="arrow-up-right"></i></a>
+      <a class="plain-link" href="earlier-study.html">Earlier reward study <i data-lucide="arrow-up-right"></i></a>
     </div>
   </main>
   <footer>Lyra: Starlight <span>Artwork &amp; reward exploration · not a release</span></footer>
