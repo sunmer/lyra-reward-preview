@@ -1,15 +1,18 @@
-import { TYPES, qualifying, viewFor, visibleCaption } from "./acknowledgment-model.mjs";
+import { TYPES, qualifying, viewFor, visibleCaption } from "./acknowledgment-model.mjs?v=3";
 
 const states = Object.fromEntries(TYPES.map(type => [type, false]));
+const variations = Object.fromEntries(TYPES.map(type => [type, -1]));
 const revisions = Object.fromEntries(TYPES.map(type => [type, 0]));
 const nodes = {};
 const imageCache = new Map();
 let data;
-let lastValidEvent = { kind: "run", amount: 5 };
+let lastValidEvent = { kind: "run", amount: 5, recorded: true };
 
 function event() {
-  return { kind: document.querySelector('input[name="activity"]:checked').value,
-    amount: Number(document.querySelector("#amount").value) };
+  const kind = document.querySelector('input[name="activity"]:checked').value;
+  return kind === "workout"
+    ? { kind, recorded: document.querySelector("#workout-recorded").checked }
+    : { kind, amount: Number(document.querySelector("#amount").value), recorded: true };
 }
 
 function loadImage(src) {
@@ -26,12 +29,12 @@ function loadImage(src) {
 }
 
 function validate() {
-  const valid = qualifying(event()) && event().amount <= 99;
+  const valid = qualifying(event());
   if (valid) lastValidEvent = event();
   const message = document.querySelector("#validation");
   message.hidden = valid;
   message.textContent = event().kind === "workout"
-    ? "A qualifying workout is at least 15 minutes. Preview maximum: 99."
+    ? "No Garmin workout recorded."
     : "A qualifying recorded walk or run is at least 3 km. Preview maximum: 99.";
   document.querySelector("#next-all").disabled = !valid && !TYPES.every(type => states[type]);
   return valid;
@@ -51,12 +54,19 @@ function makeWatch(type, index) {
     <div class="watch-actions">
       <button class="icon-button undo" title="Return to original scene" aria-label="Return ${scene.title} to the original scene"><i data-lucide="rotate-ccw"></i></button>
       <button class="beat"></button>
+      <button class="icon-button variation" title="Next compliment" aria-label="Next compliment from ${scene.title}"><i data-lucide="refresh-cw"></i></button>
     </div>
-    <div class="statistics"><span class="speaker"></span><span>Same scene</span></div>`;
+    <div class="statistics"><span class="speaker"></span><span class="variation-label"></span></div>`;
   document.querySelector("#watches").append(article);
   nodes[type] = article;
   article.querySelector(".watch-button").onclick = () => act(type);
   article.querySelector(".beat").onclick = () => act(type);
+  article.querySelector(".variation").onclick = () => {
+    if (!validate()) return;
+    variations[type] = (Math.max(0, variations[type]) + 1) % 4;
+    states[type] = true;
+    render(type);
+  };
   article.querySelector(".undo").onclick = () => {
     states[type] = false;
     render(type);
@@ -65,6 +75,7 @@ function makeWatch(type, index) {
 
 function act(type) {
   if (!states[type] && !validate()) return;
+  if (!states[type]) variations[type] = (variations[type] + 1) % 4;
   states[type] = !states[type];
   render(type);
 }
@@ -148,7 +159,7 @@ async function render(type) {
   const scene = data.scenes.find(scene => scene.id === type);
   const article = nodes[type];
   validate();
-  const view = viewFor(scene, states[type], lastValidEvent);
+  const view = viewFor(scene, states[type], lastValidEvent, Math.max(0, variations[type]));
   const button = article.querySelector(".watch-button");
   const next = states[type] ? "Resume scene" : "Acknowledge";
   article.querySelector(".day").textContent = `Panel ${String(scene.day).padStart(2, "0")} / 14`;
@@ -157,6 +168,9 @@ async function render(type) {
   article.querySelector(".beat").textContent = next;
   article.querySelector(".beat").disabled = !states[type] && !qualifying(event());
   article.querySelector(".undo").disabled = !states[type];
+  article.querySelector(".variation").disabled = !qualifying(event());
+  article.querySelector(".variation-label").textContent = states[type]
+    ? `Line ${Math.max(0, variations[type]) + 1} / 4` : "Same scene";
   article.querySelector(".speaker").textContent = type === "together" ? "Lyra + Doc" : "Lyra";
   document.querySelector("#next-all span").textContent = TYPES.every(type => states[type])
     ? "Resume scenes" : "Acknowledge";
@@ -199,7 +213,7 @@ async function render(type) {
 }
 
 async function start() {
-  const response = await fetch("acknowledgment.json?v=2");
+  const response = await fetch("acknowledgment.json?v=3");
   if (!response.ok) throw new Error("Preview data could not load.");
   data = await response.json();
   await document.fonts.load("700 25px Watch");
@@ -211,23 +225,34 @@ async function start() {
     radio.addEventListener("change", () => {
       const workout = event().kind === "workout";
       const input = document.querySelector("#amount");
-      input.min = workout ? 15 : 3;
-      input.value = workout ? 15 : 5;
-      document.querySelector("#unit").textContent = workout ? "min" : "km";
+      document.querySelector("#distance-control").hidden = workout;
+      input.disabled = workout;
+      document.querySelector("#workout-control").hidden = !workout;
+      for (const type of TYPES) {
+        variations[type] = states[type] ? 0 : -1;
+        if (!qualifying(event())) states[type] = false;
+      }
       validate();
       TYPES.forEach(render);
     });
   }
   document.querySelector("#amount").addEventListener("input", () => { validate(); TYPES.forEach(render); });
+  document.querySelector("#workout-recorded").addEventListener("change", () => {
+    if (!event().recorded) for (const type of TYPES) states[type] = false;
+    validate(); TYPES.forEach(render);
+  });
   document.querySelector("#reset").onclick = () => {
     for (const type of TYPES) {
-      states[type] = false; render(type);
+      states[type] = false; variations[type] = -1; render(type);
     }
   };
   document.querySelector("#next-all").onclick = () => {
     const next = !TYPES.every(type => states[type]);
     if (next && !validate()) return;
-    for (const type of TYPES) { states[type] = next; render(type); }
+    for (const type of TYPES) {
+      if (next && !states[type]) variations[type] = (variations[type] + 1) % 4;
+      states[type] = next; render(type);
+    }
   };
   window.lucide?.createIcons();
   await Promise.all(TYPES.map(render));

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preload" href="assets/RobotoCondensed.ttf" as="font" type="font/ttf" crossorigin>
   <script defer src="assets/lucide.min.js"></script>
-  <script type="module" src="acknowledgment.mjs?v=2"></script>
+  <script type="module" src="acknowledgment.mjs?v=3"></script>
 </head>
 <body>
   <header class="site-header">
@@ -18,7 +18,7 @@
       <a href="direction.html" class="plain-link">Design notes <i data-lucide="arrow-up-right"></i></a></div>
   </header>
   <main>
-    <div class="title-row"><div><p class="eyebrow">ACTIVITY ACKNOWLEDGMENT / 02</p>
+    <div class="title-row"><div><p class="eyebrow">ACTIVITY ACKNOWLEDGMENT / 03</p>
       <h1>A moment for you.</h1></div><span class="edition">3 scenes · 3 matched pairs</span></div>
     <form class="controls" id="controls" aria-label="Preview conditions">
       <fieldset class="activity"><legend>Recorded activity</legend>
@@ -28,7 +28,8 @@
           <label><input type="radio" name="activity" value="workout"><span><i data-lucide="dumbbell"></i>Workout</span></label>
         </div>
       </fieldset>
-      <label class="amount-label">Amount<div class="amount"><input id="amount" type="number" min="3" max="99" step="1" value="5" inputmode="numeric" aria-label="Activity amount"><span id="unit">km</span></div></label>
+      <label class="amount-label" id="distance-control">Distance<div class="amount"><input id="amount" type="number" min="3" max="99" step="1" value="5" inputmode="numeric" aria-label="Activity distance"><span id="unit">km</span></div></label>
+      <label id="workout-control" hidden><input id="workout-recorded" type="checkbox" checked> Garmin workout recorded</label>
       <div class="shared-actions">
         <button type="button" id="reset" class="icon-button" title="Reset all three watches" aria-label="Reset all three watches"><i data-lucide="rotate-ccw"></i></button>
         <button type="button" id="next-all" class="primary"><span>Acknowledge</span><i data-lucide="arrow-right"></i></button>

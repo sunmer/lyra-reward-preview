@@ -7,13 +7,28 @@
       "cast": "A knowing look",
       "sceneTitle": "Night 412",
       "storyCaption": "Static. Again.",
-      "story": "assets/solo-story-v2.webp",
-      "ack": "assets/solo-ack-v2.webp",
+      "story": "assets/solo-story-v3.webp",
+      "ack": "assets/solo-ack-v3.webp",
       "captionY": 0.86,
       "compliments": {
-        "walk": "Nice walk.",
-        "run": "Nice run.",
-        "workout": "Nice work."
+        "walk": [
+          "Great {d} walk!",
+          "{d} walk? Bravo!",
+          "{d} walk. Nice!",
+          "Love a {d} walk!"
+        ],
+        "run": [
+          "Great {d} run!",
+          "{d} run? Bravo!",
+          "{d} run. Nice!",
+          "Love a {d} run!"
+        ],
+        "workout": [
+          "Great exercise!",
+          "Look at you go!",
+          "You showed up!",
+          "Earned that nod."
+        ]
       }
     },
     {
@@ -23,13 +38,28 @@
       "cast": "They both notice",
       "sceneTitle": "SOS",
       "storyCaption": "That's an SOS.",
-      "story": "assets/together-story-v2.webp",
-      "ack": "assets/together-ack-v2.webp",
+      "story": "assets/together-story-v3.webp",
+      "ack": "assets/together-ack-v3.webp",
       "captionY": 0.86,
       "compliments": {
-        "walk": "Great work.",
-        "run": "Impressive.",
-        "workout": "Well done."
+        "walk": [
+          "Fine {d} walk!",
+          "{d} walk. Kudos!",
+          "Super {d} walk!",
+          "{d} walk. Bravo!"
+        ],
+        "run": [
+          "Fine {d} run!",
+          "{d} run. Kudos!",
+          "Super {d} run!",
+          "{d} run. Bravo!"
+        ],
+        "workout": [
+          "We're impressed!",
+          "Nice session!",
+          "Credit to you!",
+          "A job well done!"
+        ]
       }
     },
     {
@@ -39,13 +69,28 @@
       "cast": "Only Lyra notices",
       "sceneTitle": "Waking",
       "storyCaption": "THEY'RE WAKING.",
-      "story": "assets/aside-story-v2.webp",
-      "ack": "assets/aside-ack-v2.webp",
+      "story": "assets/aside-story-v3.webp",
+      "ack": "assets/aside-ack-v3.webp",
       "captionY": 0.86,
       "compliments": {
-        "walk": "Well done.",
-        "run": "Strong run.",
-        "workout": "Good work."
+        "walk": [
+          "Nice {d} walk.",
+          "{d} walk. Good!",
+          "Solid {d} walk.",
+          "{d} walk. Neat!"
+        ],
+        "run": [
+          "Nice {d} run.",
+          "{d} run. Good!",
+          "Solid {d} run.",
+          "{d} run. Neat!"
+        ],
+        "workout": [
+          "Good work today.",
+          "Well done, you.",
+          "I see your work.",
+          "You did good."
+        ]
       }
     }
   ],
