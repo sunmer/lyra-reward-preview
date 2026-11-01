@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Lyra · Reward Evaluation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="./">LYRA<span>STARLIGHT</span></a>
+    <a class="plain-link" href="./">Back to watches</a>
+  </header>
+  <main class="document">
+    <p class="eyebrow">PRODUCT + ENGINEERING REVIEW / 1 NOVEMBER 2026</p>
+    <h1>Earn closeness, not plot.</h1>
+    <p class="lede">My first choice is A Secret. Pair it with a quiet, permanent count.
+      Treat Bonus Scenes as a second-stage experiment, not the first implementation.</p>
+    <p>The story agent's scores are creative judgments, not technical readiness scores.
+      The ideas are portable patterns, but their dialogue, imagery and emotional tone
+      need authoring for each comic. Movement should never be necessary to understand
+      the ending.</p>
+    <h2>The three watches</h2>
+    <ol>
+      <li><strong>A Secret:</strong> a more intimate beat in today's location. Compatible
+        with the existing activity trigger, daily cap and two-hour display. The new
+        art is shared across activity kinds; walking does not require a walking pose.
+        Draft lines test intimacy, not finished secret-writing. The strongest final
+        version should reveal a tiny optional personal detail, not repeat exposition.</li>
+      <li><strong>Shared Count:</strong> the same companion moment plus a lasting rim
+        tally. Each mark means one qualifying reward day, <em>not</em> one workout,
+        total distance or all steps. This makes earning accumulate without a streak
+        reset. It needs new persistence, caption substitution and rendering support.
+        The tally is proposed; it is not in the shipped watch face.</li>
+      <li><strong>Bonus Scenes:</strong> a memory at five and ten qualifying days.
+        Between milestones, the companion beat shows progress. Two new optional
+        memories test collection value: Doc in the hangar and the Listener with a
+        sleeping pod. Both are noncanonical writing proposals. A replay collection,
+        milestone routing and persistence are new work, with hardware interaction,
+        storage and resource-budget checks still required.</li>
+    </ol>
+    <h2>All eleven ideas</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Story-agent rank / idea</th><th>Technical fit</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>1. A secret</td><td>Existing triggers and art slots; new content.</td><td>Best first experiment. Optional intimacy must not hide essential plot.</td></tr>
+          <tr><td>2. Bonus scenes</td><td>New persistent ledger, milestone routing, art resources and replay.</td><td>Strong earning experiment. Ten days conflicts with today's accelerated story pace.</td></tr>
+          <tr><td>3. Notices how you did it</td><td>Activity start time exists, but is not passed into the caption today. Workout weather is unavailable.</td><td>Early-start lines are feasible with modest plumbing. Do not infer rain during a run from current weather.</td></tr>
+          <tr><td>4. Keeps count</td><td>New persistence. Current detection is not a complete activity archive.</td><td>Prototype qualifying days. “20K this week” would require a separate reliable, deduplicated distance ledger.</td></tr>
+          <tr><td>5. Personal bests</td><td>No PB store or comparable-activity logic. Summary distance and duration do not provide the fastest 5K segment.</td><td>Defer. A future “best since installing” could be defined honestly, with clear comparison rules.</td></tr>
+          <tr><td>6. Streaks</td><td>New local-day history and gap handling.</td><td>Feasible, but a permanent count is kinder and does not punish a rest day.</td></tr>
+          <tr><td>7. Dares you</td><td>A static line fits; remembering and checking tomorrow's challenge is new state.</td><td>Character-dependent. Avoid competition or bravado in grief scenes.</td></tr>
+          <tr><td>8. Your number in her world</td><td>Existing distance/minute tokens; strict caption space.</td><td>Useful flavour. Match units and avoid pretending a fictional route has a measured distance.</td></tr>
+          <tr><td>9. She trains too</td><td>Current approach.</td><td>Technically ready, but literal exercise can interrupt the scene and feels less like earning.</td></tr>
+          <tr><td>10. You helped</td><td>Existing inputs can support the line.</td><td>Use emotional encouragement only. Never imply the hero or story fails when the reader rests.</td></tr>
+          <tr><td>11. A cheer</td><td>Existing inputs and fallback pattern.</td><td>Reliable fallback, not a differentiated reward system.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 id="rules">Current rules, not assumptions</h2>
+    <ul>
+      <li>Recorded running, walking or hiking qualifies at 3 km. Eligible other sports
+        qualify at 15 minutes; not every sport is included.</li>
+      <li>There is also a step-based walking fallback: at least 2,000 steps at an
+        average pace equivalent to 2,000 per 30 minutes since the sample. It is not
+        a general daily step goal; the baseline resets after a long sampling gap.</li>
+      <li>At most one reward per local day. Detection happens when the watch face
+        updates and checks activity history. It is not a guaranteed instant callback;
+        earlier workouts can be missed when a later qualifying activity wins.</li>
+      <li>A reward displays for two hours, then advances the story one extra panel.
+        The first wake after a new local day advances one panel. The ending has no
+        action reward.</li>
+      <li>The caption is one line, capped at 16 characters, including the activity.
+        Current dynamic tokens are distance and minutes only. The preview respects
+        this cap; count and milestone substitutions would be new engine work.</li>
+      <li>The three previews use metric recorded activities with valid summary data.
+        They do not simulate step sampling, history polling, missing fields, every
+        excluded sport or imperial conversion. Production supports miles too;
+        longer prefixes need their own caption variants.</li>
+    </ul>
+    <p>These rules were checked against the local <code>ActionState.mc</code>,
+      <code>StoryState.mc</code> and <code>ComicView.mc</code>. Garmin's
+      <a href="https://developer.garmin.com/connect-iq/api-docs/Toybox/UserProfile/UserActivity.html">UserActivity API</a>
+      exposes nullable start time, duration, distance and type. It does not supply
+      workout weather or an all-time personal-best feed in that object.</p>
+    <h2>The pacing decision</h2>
+    <p>The preview defaults to a <strong>proposed daily-only story pace</strong>:
+      the reward returns to the same story panel after two hours. This separates
+      earning from consuming the plot. The selector also offers today's extra-step
+      rule. With a reward every day, that rule reaches the ending after seven
+      rewards, before the ten-day memory. Keeping current pacing means lowering
+      milestones or defining a collection that carries across episodes.</p>
+    <p>No activity still completes all fourteen story panels. The simulated two-hour
+      period is advanced manually, not a real wait. There is no sensor connection
+      and the preview resets on reload.</p>
+    <h2>A reusable comic frame</h2>
+    <p>Keep the activity prefix and companion-beat visual language consistent.
+      Do not mandate eye contact: Day 9's hands and fading pod are more truthful
+      than a smiling portrait. Let each comic choose its voice, optional asides,
+      milestone images and mood restrictions.</p>
+    <p>“Rarest wins” needs authored priorities, not guesswork. A future implementation
+      should award each milestone once, preserve pending rewards, choose only among
+      facts actually observed, and prevent a special caption from suppressing a
+      promised unlock. There is no such arbitration engine in this preview.</p>
+    <h2>Art direction and scope</h2>
+    <p>Fifteen new generated images: thirteen scene-specific companion beats and
+      two memories, through the existing OpenRouter image pipeline. Each companion
+      image serves all three concepts so their writing and reward mechanics can
+      be compared without an art-quality advantage. Bonus milestones have unique art.</p>
+    <p>The upper area is drawn scene-derived ink and halftone, not an empty reserved
+      strip or a darkening overlay. Faces and important gestures are composed below
+      the header. The clock, date, weather and heart rate are real HTML canvas
+      overlays, not baked into the generated artwork.</p>
+    <p>The regular story is identical in all three watches. Panels 1, 7, 8 and 12 use
+      the approved graphic studies; the other ten retain current masters and their
+      existing production shading. This is a reward study, not a claim that all
+      regular art has already been redesigned.</p>
+    <p>The circular preview uses an approximate font at a 390-unit reference size.
+      A browser cannot certify Garmin display brightness, font metrics, palette
+      conversion or legibility on your physical watch. Production still requires
+      simulator and small-device checks. No Garmin source, story canon or store
+      release was changed by this study.</p>
+    <p><a href="./">Return to the three watches</a></p>
+  </main>
+</body>
+</html>
