@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Lyra: Starlight | Complete Artwork Review</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="full-set.css?v=1">
+  <link rel="preload" href="assets/RobotoCondensed.ttf" as="font" type="font/ttf" crossorigin>
+  <script defer src="assets/lucide.min.js"></script>
+  <script type="module" src="full-set.mjs?v=1"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="./">LYRA<span>STARLIGHT</span></a>
+    <a class="plain-link" href="lyra-full-artwork-review.zip" download><i data-lucide="download"></i>Artwork + copy</a>
+  </header>
+  <main class="full-review">
+    <div class="title-row"><div><p class="eyebrow">COMPLETE ARTWORK REVIEW</p><h1>Lyra: Starlight</h1></div>
+      <span class="edition">14 story panels / 13 acknowledgments</span></div>
+    <form class="controls" id="review-controls" aria-label="Review settings">
+      <label class="amount-label">Panel<select id="panel" aria-label="Panel"><option value="all">All panels</option></select></label>
+      <div class="panel-arrows">
+        <button class="icon-button" type="button" id="previous" aria-label="Previous panel" title="Previous panel"><i data-lucide="chevron-left"></i></button>
+        <button class="icon-button" type="button" id="next" aria-label="Next panel" title="Next panel"><i data-lucide="chevron-right"></i></button>
+      </div>
+      <button class="icon-button" type="button" id="settings-toggle" title="Preview settings" aria-label="Preview settings" aria-expanded="false" aria-controls="review-settings"><i data-lucide="sliders-horizontal"></i></button>
+      <div id="review-settings" hidden>
+        <label class="amount-label">Recorded activity<select id="activity"><option value="walk">Walk</option><option value="run" selected>Run</option><option value="workout">Garmin workout</option></select></label>
+        <label class="amount-label" id="distance-label">Distance<div class="amount"><input type="number" id="distance" min="3" max="99" step="1" value="5" aria-label="Distance in kilometers" inputmode="numeric"><span>km</span></div></label>
+        <label class="amount-label">Copy variation<select id="variation"><option value="0">1 of 4</option><option value="1">2 of 4</option><option value="2">3 of 4</option><option value="3">4 of 4</option></select></label>
+        <div class="view-toggles"><label><input type="checkbox" id="show-ui" checked>Watch data</label><label><input type="checkbox" id="show-copy" checked>Caption</label></div>
+      </div>
+    </form>
+    <p id="review-error" class="validation" role="alert" hidden></p>
+    <nav id="filmstrip" aria-label="Panel thumbnails"></nav>
+    <p id="review-loading" role="status">Loading artwork...</p>
+    <div id="review-scenes"></div>
+    <div class="below"><span>Review artwork / draft copy / not a Garmin release</span><a class="plain-link" href="full-set-copy.md" download>Copy manifest <i data-lucide="download"></i></a></div>
+  </main>
+  <footer>Lyra: Starlight <a href="./">Earlier three-pair study</a></footer>
+  <noscript>This review requires JavaScript. The artwork and copy ZIP is available above.</noscript>
+</body>
+</html>

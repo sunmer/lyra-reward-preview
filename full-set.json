@@ -1,0 +1,620 @@
+{
+  "version": 1,
+  "status": "Complete artwork review, not a Garmin release",
+  "icons": {
+    "IconCloud": [
+      6,
+      234,
+      [
+        16777215,
+        167,
+        86,
+        159,
+        72,
+        147,
+        58,
+        133,
+        48,
+        118,
+        41,
+        101,
+        37,
+        83,
+        36,
+        66,
+        40,
+        56,
+        43,
+        41,
+        52,
+        28,
+        64,
+        18,
+        78,
+        11,
+        93,
+        7,
+        110,
+        6,
+        127,
+        10,
+        145,
+        13,
+        154,
+        22,
+        170,
+        34,
+        183,
+        41,
+        188,
+        55,
+        196,
+        72,
+        202,
+        90,
+        204,
+        175,
+        204,
+        187,
+        203,
+        198,
+        199,
+        215,
+        188,
+        222,
+        180,
+        228,
+        170,
+        234,
+        150,
+        233,
+        138,
+        231,
+        127,
+        222,
+        110,
+        215,
+        102,
+        205,
+        94,
+        188,
+        88
+      ]
+    ],
+    "IconHeart": [
+      6,
+      234,
+      [
+        16731486,
+        234,
+        89,
+        230,
+        73,
+        221,
+        55,
+        211,
+        43,
+        200,
+        36,
+        192,
+        32,
+        173,
+        26,
+        157,
+        26,
+        138,
+        32,
+        120,
+        43,
+        109,
+        35,
+        97,
+        30,
+        83,
+        27,
+        74,
+        26,
+        61,
+        27,
+        48,
+        32,
+        35,
+        39,
+        24,
+        48,
+        16,
+        60,
+        10,
+        73,
+        7,
+        87,
+        6,
+        96,
+        8,
+        110,
+        12,
+        122,
+        18,
+        133,
+        29,
+        148,
+        98,
+        216,
+        109,
+        222,
+        121,
+        224,
+        131,
+        222,
+        143,
+        215,
+        212,
+        147,
+        223,
+        132,
+        230,
+        116,
+        233,
+        103
+      ]
+    ]
+  },
+  "scenes": [
+    {
+      "day": 1,
+      "title": "Night 412",
+      "storyCaption": "Static. Again.",
+      "storySpeaker": "Lyra",
+      "voice": null,
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Great {d} walk!",
+          "{d} walk? Bravo!",
+          "{d} walk. Nice!",
+          "Love a {d} walk!"
+        ],
+        "run": [
+          "Great {d} run!",
+          "{d} run? Bravo!",
+          "{d} run. Nice!",
+          "Love a {d} run!"
+        ],
+        "workout": [
+          "Great exercise!",
+          "Look at you go!",
+          "You showed up!",
+          "Earned that nod."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d01.webp",
+      "story": "assets/full-set/d01-story.webp",
+      "ack": "assets/full-set/d01-ack.webp"
+    },
+    {
+      "day": 2,
+      "title": "The Hum",
+      "storyCaption": "Stars don't hum.",
+      "storySpeaker": "Lyra",
+      "voice": null,
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Great {d} walk!",
+          "{d} walk? Bravo!",
+          "{d} walk. Nice!",
+          "Love a {d} walk!"
+        ],
+        "run": [
+          "Great {d} run!",
+          "{d} run? Bravo!",
+          "{d} run. Nice!",
+          "Love a {d} run!"
+        ],
+        "workout": [
+          "Great exercise!",
+          "Look at you go!",
+          "You showed up!",
+          "Earned that nod."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d02.webp",
+      "story": "assets/full-set/d02-story.webp",
+      "ack": "assets/full-set/d02-ack.webp"
+    },
+    {
+      "day": 3,
+      "title": "SOS",
+      "storyCaption": "That's an SOS.",
+      "storySpeaker": "Lyra",
+      "voice": null,
+      "ackSpeaker": "Lyra + Doc",
+      "captionY": 0.915,
+      "captionCompact": true,
+      "compliments": {
+        "walk": [
+          "Fine {d} walk!",
+          "{d} walk. Kudos!",
+          "Super {d} walk!",
+          "{d} walk. Bravo!"
+        ],
+        "run": [
+          "Fine {d} run!",
+          "{d} run. Kudos!",
+          "Super {d} run!",
+          "{d} run. Bravo!"
+        ],
+        "workout": [
+          "We're impressed!",
+          "Nice session!",
+          "Credit to you!",
+          "A job well done!"
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d03.webp",
+      "story": "assets/full-set/d03-story.webp",
+      "ack": "assets/full-set/d03-ack.webp"
+    },
+    {
+      "day": 4,
+      "title": "No Crew",
+      "storyCaption": "We have no crew.",
+      "storySpeaker": "Doc",
+      "voice": null,
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Nice {d} walk.",
+          "{d} walk. Good!",
+          "Solid {d} walk.",
+          "{d} walk. Neat!"
+        ],
+        "run": [
+          "Nice {d} run.",
+          "{d} run. Good!",
+          "Solid {d} run.",
+          "{d} run. Neat!"
+        ],
+        "workout": [
+          "Good work today.",
+          "Well done, you.",
+          "I see your work.",
+          "You did good."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d04.webp",
+      "story": "assets/full-set/d04-story.webp",
+      "ack": "assets/full-set/d04-ack.webp"
+    },
+    {
+      "day": 5,
+      "title": "You Do Now",
+      "storyCaption": "You do now.",
+      "storySpeaker": "Lyra",
+      "voice": null,
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Great {d} walk!",
+          "{d} walk? Bravo!",
+          "{d} walk. Nice!",
+          "Love a {d} walk!"
+        ],
+        "run": [
+          "Great {d} run!",
+          "{d} run? Bravo!",
+          "{d} run. Nice!",
+          "Love a {d} run!"
+        ],
+        "workout": [
+          "Great exercise!",
+          "Look at you go!",
+          "You showed up!",
+          "Earned that nod."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d05.webp",
+      "story": "assets/full-set/d05-story.webp",
+      "ack": "assets/full-set/d05-ack.webp"
+    },
+    {
+      "day": 6,
+      "title": "The Door",
+      "storyCaption": "Is that a door?",
+      "storySpeaker": "Lyra",
+      "voice": null,
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Great {d} walk!",
+          "{d} walk? Bravo!",
+          "{d} walk. Nice!",
+          "Love a {d} walk!"
+        ],
+        "run": [
+          "Great {d} run!",
+          "{d} run? Bravo!",
+          "{d} run. Nice!",
+          "Love a {d} run!"
+        ],
+        "workout": [
+          "Great exercise!",
+          "Look at you go!",
+          "You showed up!",
+          "Earned that nod."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d06.webp",
+      "story": "assets/full-set/d06-story.webp",
+      "ack": "assets/full-set/d06-ack.webp"
+    },
+    {
+      "day": 7,
+      "title": "Red Sun",
+      "storyCaption": "Who's calling?",
+      "storySpeaker": "Lyra",
+      "voice": null,
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Great {d} walk!",
+          "{d} walk? Bravo!",
+          "{d} walk. Nice!",
+          "Love a {d} walk!"
+        ],
+        "run": [
+          "Great {d} run!",
+          "{d} run? Bravo!",
+          "{d} run. Nice!",
+          "Love a {d} run!"
+        ],
+        "workout": [
+          "Great exercise!",
+          "Look at you go!",
+          "You showed up!",
+          "Earned that nod."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d07.webp",
+      "story": "assets/full-set/d07-story.webp",
+      "ack": "assets/full-set/d07-ack.webp"
+    },
+    {
+      "day": 8,
+      "title": "The Listener",
+      "storyCaption": "YOU CAME.",
+      "storySpeaker": "Listener",
+      "voice": "radio",
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Great {d} walk!",
+          "{d} walk? Bravo!",
+          "{d} walk. Nice!",
+          "Love a {d} walk!"
+        ],
+        "run": [
+          "Great {d} run!",
+          "{d} run? Bravo!",
+          "{d} run. Nice!",
+          "Love a {d} run!"
+        ],
+        "workout": [
+          "Great exercise!",
+          "Look at you go!",
+          "You showed up!",
+          "Earned that nod."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d08.webp",
+      "story": "assets/full-set/d08-story.webp",
+      "ack": "assets/full-set/d08-ack.webp"
+    },
+    {
+      "day": 9,
+      "title": "Mayday",
+      "storyCaption": "THEY'RE FADING.",
+      "storySpeaker": "Listener",
+      "voice": "radio",
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Nice {d} walk.",
+          "{d} walk. Good!",
+          "Solid {d} walk.",
+          "{d} walk. Neat!"
+        ],
+        "run": [
+          "Nice {d} run.",
+          "{d} run. Good!",
+          "Solid {d} run.",
+          "{d} run. Neat!"
+        ],
+        "workout": [
+          "Good work today.",
+          "Well done, you.",
+          "I see your work.",
+          "You did good."
+        ]
+      },
+      "note": "Reframed from the extreme close-up: the dying pod and four hands remain central, with Lyra visible at the side for a quiet glance.",
+      "thumbnail": "assets/full-set-thumbs/d09.webp",
+      "story": "assets/full-set/d09-story.webp",
+      "ack": "assets/full-set/d09-ack.webp"
+    },
+    {
+      "day": 10,
+      "title": "Reactor",
+      "storyCaption": "Take my reactor.",
+      "storySpeaker": "Lyra",
+      "voice": null,
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Nice {d} walk.",
+          "{d} walk. Good!",
+          "Solid {d} walk.",
+          "{d} walk. Neat!"
+        ],
+        "run": [
+          "Nice {d} run.",
+          "{d} run. Good!",
+          "Solid {d} run.",
+          "{d} run. Neat!"
+        ],
+        "workout": [
+          "Good work today.",
+          "Well done, you.",
+          "I see your work.",
+          "You did good."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d10.webp",
+      "story": "assets/full-set/d10-story.webp",
+      "ack": "assets/full-set/d10-ack.webp"
+    },
+    {
+      "day": 11,
+      "title": "Waking",
+      "storyCaption": "THEY'RE WAKING.",
+      "storySpeaker": "Listener",
+      "voice": "radio",
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Nice {d} walk.",
+          "{d} walk. Good!",
+          "Solid {d} walk.",
+          "{d} walk. Neat!"
+        ],
+        "run": [
+          "Nice {d} run.",
+          "{d} run. Good!",
+          "Solid {d} run.",
+          "{d} run. Neat!"
+        ],
+        "workout": [
+          "Good work today.",
+          "Well done, you.",
+          "I see your work.",
+          "You did good."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d11.webp",
+      "story": "assets/full-set/d11-story.webp",
+      "ack": "assets/full-set/d11-ack.webp"
+    },
+    {
+      "day": 12,
+      "title": "Godspeed",
+      "storyCaption": "GODSPEED.",
+      "storySpeaker": "Listener",
+      "voice": "radio",
+      "ackSpeaker": "Lyra",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Nice {d} walk.",
+          "{d} walk. Good!",
+          "Solid {d} walk.",
+          "{d} walk. Neat!"
+        ],
+        "run": [
+          "Nice {d} run.",
+          "{d} run. Good!",
+          "Solid {d} run.",
+          "{d} run. Neat!"
+        ],
+        "workout": [
+          "Good work today.",
+          "Well done, you.",
+          "I see your work.",
+          "You did good."
+        ]
+      },
+      "note": "",
+      "thumbnail": "assets/full-set-thumbs/d12.webp",
+      "story": "assets/full-set/d12-story.webp",
+      "ack": "assets/full-set/d12-ack.webp"
+    },
+    {
+      "day": 13,
+      "title": "She Made It",
+      "storyCaption": "She made it.",
+      "storySpeaker": "Doc",
+      "voice": null,
+      "ackSpeaker": "Doc",
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {
+        "walk": [
+          "Great {d} walk!",
+          "{d} walk? Bravo!",
+          "{d} walk. Nice!",
+          "Love a {d} walk!"
+        ],
+        "run": [
+          "Great {d} run!",
+          "{d} run? Bravo!",
+          "{d} run. Nice!",
+          "Love a {d} run!"
+        ],
+        "workout": [
+          "Great exercise!",
+          "Look at you go!",
+          "You showed up!",
+          "Earned that nod."
+        ]
+      },
+      "note": "Doc alone acknowledges you. The capsule is still descending; Lyra is not visible.",
+      "thumbnail": "assets/full-set-thumbs/d13.webp",
+      "story": "assets/full-set/d13-story.webp",
+      "ack": "assets/full-set/d13-ack.webp"
+    },
+    {
+      "day": 14,
+      "title": "Night 1",
+      "storyCaption": "Static. For now.",
+      "storySpeaker": "Lyra",
+      "voice": null,
+      "ackSpeaker": null,
+      "captionY": 0.86,
+      "captionCompact": false,
+      "compliments": {},
+      "note": "Closing panel. No acknowledgment under the current rules.",
+      "thumbnail": "assets/full-set-thumbs/d14.webp",
+      "story": "assets/full-set/d14-story.webp"
+    }
+  ]
+}
